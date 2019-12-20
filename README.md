@@ -1,4 +1,4 @@
-# go-pointer
+# go-ptr
 
 ```go
 func Bool(s bool) *bool

@@ -1,4 +1,4 @@
-package pointer
+package ptr
 
 func String(s string) *string {
 	return &s
