@@ -1,5 +1,7 @@
 package ptr
 
+import "time"
+
 func String(s string) *string {
 	return &s
 }
@@ -77,5 +79,13 @@ func Complex128(s complex128) *complex128 {
 }
 
 func Error(s error) *error {
+	return &s
+}
+
+func Time(s time.Time) *time.Time {
+	return &s
+}
+
+func Duration(s time.Duration) *time.Duration {
 	return &s
 }
