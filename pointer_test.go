@@ -20,6 +20,7 @@ func TestBool(t *testing.T) {
 	as.Equal(&v1, BoolNoNonePtr(v1))
 	as.True(nil == BoolNoNonePtr(v0))
 	as.Equal(v0, ValueBool(Bool(v0)))
+	as.Equal(v0, ValueBool(nil))
 	as.Equal(v1, ValueBool(Bool(v1)))
 	as.Equal(v1, ValueBoolWithDefault(BoolNoNonePtr(v0), v1))
 }
@@ -36,6 +37,7 @@ func TestByte(t *testing.T) {
 	as.Equal(&v1, ByteNoNonePtr(v1))
 	as.True(nil == ByteNoNonePtr(v0))
 	as.Equal(v0, ValueByte(Byte(v0)))
+	as.Equal(v0, ValueByte(nil))
 	as.Equal(v1, ValueByte(Byte(v1)))
 	as.Equal(v1, ValueByteWithDefault(ByteNoNonePtr(v0), v1))
 }
@@ -52,6 +54,7 @@ func TestComplex128(t *testing.T) {
 	as.Equal(&v1, Complex128NoNonePtr(v1))
 	as.True(nil == Complex128NoNonePtr(v0))
 	as.Equal(v0, ValueComplex128(Complex128(v0)))
+	as.Equal(v0, ValueComplex128(nil))
 	as.Equal(v1, ValueComplex128(Complex128(v1)))
 	as.Equal(v1, ValueComplex128WithDefault(Complex128NoNonePtr(v0), v1))
 }
@@ -68,6 +71,7 @@ func TestComplex64(t *testing.T) {
 	as.Equal(&v1, Complex64NoNonePtr(v1))
 	as.True(nil == Complex64NoNonePtr(v0))
 	as.Equal(v0, ValueComplex64(Complex64(v0)))
+	as.Equal(v0, ValueComplex64(nil))
 	as.Equal(v1, ValueComplex64(Complex64(v1)))
 	as.Equal(v1, ValueComplex64WithDefault(Complex64NoNonePtr(v0), v1))
 }
@@ -84,6 +88,7 @@ func TestDuration(t *testing.T) {
 	as.Equal(&v1, DurationNoNonePtr(v1))
 	as.True(nil == DurationNoNonePtr(v0))
 	as.Equal(v0, ValueDuration(Duration(v0)))
+	as.Equal(v0, ValueDuration(nil))
 	as.Equal(v1, ValueDuration(Duration(v1)))
 	as.Equal(v1, ValueDurationWithDefault(DurationNoNonePtr(v0), v1))
 }
@@ -100,6 +105,7 @@ func TestError(t *testing.T) {
 	as.Equal(&v1, ErrorNoNonePtr(v1))
 	as.True(nil == ErrorNoNonePtr(v0))
 	as.Equal(v0, ValueError(Error(v0)))
+	as.Equal(v0, ValueError(nil))
 	as.Equal(v1, ValueError(Error(v1)))
 	as.Equal(v1, ValueErrorWithDefault(ErrorNoNonePtr(v0), v1))
 }
@@ -116,6 +122,7 @@ func TestFloat32(t *testing.T) {
 	as.Equal(&v1, Float32NoNonePtr(v1))
 	as.True(nil == Float32NoNonePtr(v0))
 	as.Equal(v0, ValueFloat32(Float32(v0)))
+	as.Equal(v0, ValueFloat32(nil))
 	as.Equal(v1, ValueFloat32(Float32(v1)))
 	as.Equal(v1, ValueFloat32WithDefault(Float32NoNonePtr(v0), v1))
 }
@@ -132,6 +139,7 @@ func TestFloat64(t *testing.T) {
 	as.Equal(&v1, Float64NoNonePtr(v1))
 	as.True(nil == Float64NoNonePtr(v0))
 	as.Equal(v0, ValueFloat64(Float64(v0)))
+	as.Equal(v0, ValueFloat64(nil))
 	as.Equal(v1, ValueFloat64(Float64(v1)))
 	as.Equal(v1, ValueFloat64WithDefault(Float64NoNonePtr(v0), v1))
 }
@@ -148,6 +156,7 @@ func TestInt(t *testing.T) {
 	as.Equal(&v1, IntNoNonePtr(v1))
 	as.True(nil == IntNoNonePtr(v0))
 	as.Equal(v0, ValueInt(Int(v0)))
+	as.Equal(v0, ValueInt(nil))
 	as.Equal(v1, ValueInt(Int(v1)))
 	as.Equal(v1, ValueIntWithDefault(IntNoNonePtr(v0), v1))
 }
@@ -164,6 +173,7 @@ func TestInt8(t *testing.T) {
 	as.Equal(&v1, Int8NoNonePtr(v1))
 	as.True(nil == Int8NoNonePtr(v0))
 	as.Equal(v0, ValueInt8(Int8(v0)))
+	as.Equal(v0, ValueInt8(nil))
 	as.Equal(v1, ValueInt8(Int8(v1)))
 	as.Equal(v1, ValueInt8WithDefault(Int8NoNonePtr(v0), v1))
 }
@@ -180,6 +190,7 @@ func TestInt16(t *testing.T) {
 	as.Equal(&v1, Int16NoNonePtr(v1))
 	as.True(nil == Int16NoNonePtr(v0))
 	as.Equal(v0, ValueInt16(Int16(v0)))
+	as.Equal(v0, ValueInt16(nil))
 	as.Equal(v1, ValueInt16(Int16(v1)))
 	as.Equal(v1, ValueInt16WithDefault(Int16NoNonePtr(v0), v1))
 }
@@ -196,6 +207,7 @@ func TestInt32(t *testing.T) {
 	as.Equal(&v1, Int32NoNonePtr(v1))
 	as.True(nil == Int32NoNonePtr(v0))
 	as.Equal(v0, ValueInt32(Int32(v0)))
+	as.Equal(v0, ValueInt32(nil))
 	as.Equal(v1, ValueInt32(Int32(v1)))
 	as.Equal(v1, ValueInt32WithDefault(Int32NoNonePtr(v0), v1))
 }
@@ -212,6 +224,7 @@ func TestInt64(t *testing.T) {
 	as.Equal(&v1, Int64NoNonePtr(v1))
 	as.True(nil == Int64NoNonePtr(v0))
 	as.Equal(v0, ValueInt64(Int64(v0)))
+	as.Equal(v0, ValueInt64(nil))
 	as.Equal(v1, ValueInt64(Int64(v1)))
 	as.Equal(v1, ValueInt64WithDefault(Int64NoNonePtr(v0), v1))
 }
@@ -228,6 +241,7 @@ func TestRune(t *testing.T) {
 	as.Equal(&v1, RuneNoNonePtr(v1))
 	as.True(nil == RuneNoNonePtr(v0))
 	as.Equal(v0, ValueRune(Rune(v0)))
+	as.Equal(v0, ValueRune(nil))
 	as.Equal(v1, ValueRune(Rune(v1)))
 	as.Equal(v1, ValueRuneWithDefault(RuneNoNonePtr(v0), v1))
 }
@@ -244,6 +258,7 @@ func TestString(t *testing.T) {
 	as.Equal(&v1, StringNoNonePtr(v1))
 	as.True(nil == StringNoNonePtr(v0))
 	as.Equal(v0, ValueString(String(v0)))
+	as.Equal(v0, ValueString(nil))
 	as.Equal(v1, ValueString(String(v1)))
 	as.Equal(v1, ValueStringWithDefault(StringNoNonePtr(v0), v1))
 }
@@ -260,6 +275,7 @@ func TestTime(t *testing.T) {
 	as.Equal(&v1, TimeNoNonePtr(v1))
 	as.True(nil == TimeNoNonePtr(v0))
 	as.Equal(v0, ValueTime(Time(v0)))
+	as.Equal(v0, ValueTime(nil))
 	as.Equal(v1, ValueTime(Time(v1)))
 	as.Equal(v1, ValueTimeWithDefault(TimeNoNonePtr(v0), v1))
 }
@@ -276,6 +292,7 @@ func TestUInt(t *testing.T) {
 	as.Equal(&v1, UIntNoNonePtr(v1))
 	as.True(nil == UIntNoNonePtr(v0))
 	as.Equal(v0, ValueUInt(UInt(v0)))
+	as.Equal(v0, ValueUInt(nil))
 	as.Equal(v1, ValueUInt(UInt(v1)))
 	as.Equal(v1, ValueUIntWithDefault(UIntNoNonePtr(v0), v1))
 }
@@ -292,6 +309,7 @@ func TestUInt8(t *testing.T) {
 	as.Equal(&v1, UInt8NoNonePtr(v1))
 	as.True(nil == UInt8NoNonePtr(v0))
 	as.Equal(v0, ValueUInt8(UInt8(v0)))
+	as.Equal(v0, ValueUInt8(nil))
 	as.Equal(v1, ValueUInt8(UInt8(v1)))
 	as.Equal(v1, ValueUInt8WithDefault(UInt8NoNonePtr(v0), v1))
 }
@@ -308,6 +326,7 @@ func TestUInt16(t *testing.T) {
 	as.Equal(&v1, UInt16NoNonePtr(v1))
 	as.True(nil == UInt16NoNonePtr(v0))
 	as.Equal(v0, ValueUInt16(UInt16(v0)))
+	as.Equal(v0, ValueUInt16(nil))
 	as.Equal(v1, ValueUInt16(UInt16(v1)))
 	as.Equal(v1, ValueUInt16WithDefault(UInt16NoNonePtr(v0), v1))
 }
@@ -324,6 +343,7 @@ func TestUInt32(t *testing.T) {
 	as.Equal(&v1, UInt32NoNonePtr(v1))
 	as.True(nil == UInt32NoNonePtr(v0))
 	as.Equal(v0, ValueUInt32(UInt32(v0)))
+	as.Equal(v0, ValueUInt32(nil))
 	as.Equal(v1, ValueUInt32(UInt32(v1)))
 	as.Equal(v1, ValueUInt32WithDefault(UInt32NoNonePtr(v0), v1))
 }
@@ -340,6 +360,7 @@ func TestUInt64(t *testing.T) {
 	as.Equal(&v1, UInt64NoNonePtr(v1))
 	as.True(nil == UInt64NoNonePtr(v0))
 	as.Equal(v0, ValueUInt64(UInt64(v0)))
+	as.Equal(v0, ValueUInt64(nil))
 	as.Equal(v1, ValueUInt64(UInt64(v1)))
 	as.Equal(v1, ValueUInt64WithDefault(UInt64NoNonePtr(v0), v1))
 }
@@ -356,6 +377,7 @@ func TestUIntptr(t *testing.T) {
 	as.Equal(&v1, UIntptrNoNonePtr(v1))
 	as.True(nil == UIntptrNoNonePtr(v0))
 	as.Equal(v0, ValueUIntptr(UIntptr(v0)))
+	as.Equal(v0, ValueUIntptr(nil))
 	as.Equal(v1, ValueUIntptr(UIntptr(v1)))
 	as.Equal(v1, ValueUIntptrWithDefault(UIntptrNoNonePtr(v0), v1))
 }

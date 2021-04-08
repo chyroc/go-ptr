@@ -15,7 +15,7 @@ func ValueTime(s *time.Time) time.Time {
 	if s != nil {
 		return *s
 	}
-	return time.Time{}
+	return time.Unix(0, 0)
 }
 
 func ValueBool(s *bool) bool {
