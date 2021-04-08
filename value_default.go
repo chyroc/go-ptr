@@ -1,6 +1,17 @@
 package ptr
 
+import (
+	"time"
+)
+
 func ValueStringWithDefault(s *string, defaultValue string) string {
+	if s != nil {
+		return *s
+	}
+	return defaultValue
+}
+
+func ValueTimeWithDefault(s *time.Time, defaultValue time.Time) time.Time {
 	if s != nil {
 		return *s
 	}
@@ -120,6 +131,13 @@ func ValueFloat64WithDefault(s *float64, defaultValue float64) float64 {
 }
 
 func ValueComplex64WithDefault(s *complex64, defaultValue complex64) complex64 {
+	if s != nil {
+		return *s
+	}
+	return defaultValue
+}
+
+func ValueDurationWithDefault(s *time.Duration, defaultValue time.Duration) time.Duration {
 	if s != nil {
 		return *s
 	}

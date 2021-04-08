@@ -1,10 +1,21 @@
 package ptr
 
+import (
+	"time"
+)
+
 func ValueString(s *string) string {
 	if s != nil {
 		return *s
 	}
 	return ""
+}
+
+func ValueTime(s *time.Time) time.Time {
+	if s != nil {
+		return *s
+	}
+	return time.Time{}
 }
 
 func ValueBool(s *bool) bool {
@@ -120,6 +131,13 @@ func ValueFloat64(s *float64) float64 {
 }
 
 func ValueComplex64(s *complex64) complex64 {
+	if s != nil {
+		return *s
+	}
+	return 0
+}
+
+func ValueDuration(s *time.Duration) time.Duration {
 	if s != nil {
 		return *s
 	}
