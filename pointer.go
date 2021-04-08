@@ -79,6 +79,9 @@ func Complex128(s complex128) *complex128 {
 }
 
 func Error(s error) *error {
+	if s == nil {
+		return nil
+	}
 	return &s
 }
 
