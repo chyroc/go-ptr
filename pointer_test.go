@@ -2,6 +2,7 @@ package ptr
 
 import (
 	"errors"
+	"reflect"
 	"testing"
 	"time"
 
@@ -402,4 +403,24 @@ func TestUIntptr(t *testing.T) {
 	as.Equal(v1, ValueUIntptr(UIntptr(v1)))
 	as.Equal(v1, ValueUIntptrWithDefault(UIntptrNoNonePtr(v0), v1))
 	as.Equal(v1, ValueUIntptrWithDefault(UIntptrNoNonePtr(v1), v1))
+}
+
+
+
+func TestReflect(t *testing.T) {
+	as := assert.New(t)
+
+	v0 := reflect.ValueOf(1)
+	v1 := reflect.TypeOf(1)
+
+	as.Equal(&v0, ReflectValue(v0))
+	as.Equal(&v1, ReflectType(v1))
+	// as.Equal((*uintptr)(nil), UIntptrNoNonePtr(v0))
+	// as.Equal(&v1, UIntptrNoNonePtr(v1))
+	// as.True(nil == UIntptrNoNonePtr(v0))
+	// as.Equal(v0, ValueUIntptr(UIntptr(v0)))
+	// as.Equal(v0, ValueUIntptr(nil))
+	// as.Equal(v1, ValueUIntptr(UIntptr(v1)))
+	// as.Equal(v1, ValueUIntptrWithDefault(UIntptrNoNonePtr(v0), v1))
+	// as.Equal(v1, ValueUIntptrWithDefault(UIntptrNoNonePtr(v1), v1))
 }

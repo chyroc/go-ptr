@@ -1,6 +1,9 @@
 package ptr
 
-import "time"
+import (
+	"reflect"
+	"time"
+)
 
 func String(s string) *string {
 	return &s
@@ -90,5 +93,13 @@ func Time(s time.Time) *time.Time {
 }
 
 func Duration(s time.Duration) *time.Duration {
+	return &s
+}
+
+func ReflectValue(s reflect.Value) *reflect.Value {
+	return &s
+}
+
+func ReflectType(s reflect.Type) *reflect.Type {
 	return &s
 }
