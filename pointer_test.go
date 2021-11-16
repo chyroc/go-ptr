@@ -405,8 +405,6 @@ func TestUIntptr(t *testing.T) {
 	as.Equal(v1, ValueUIntptrWithDefault(UIntptrNoNonePtr(v1), v1))
 }
 
-
-
 func TestReflect(t *testing.T) {
 	as := assert.New(t)
 

@@ -16,10 +16,4 @@ go get github.com/chyroc/go-ptr
 
 ## Usage
 
-doc: https://godoc.org/github.com/chyroc/go-pointer
-
-## Dev
-
-- setup codecov
-  - setup github secret: CODECOV_TOKEN
-  - https://app.codecov.io/gh/chyroc/go-ptr
+godoc: https://pkg.go.dev/github.com/chyroc/go-ptr
