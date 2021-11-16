@@ -1,7 +1,9 @@
 package ptr
 
 import (
+	"reflect"
 	"testing"
+	"time"
 
 	"github.com/stretchr/testify/assert"
 )
@@ -32,6 +34,32 @@ func TestPointerInt64ToTime(t *testing.T) {
 				as.Nil(got)
 			} else {
 				as.Contains(tt.want, got.Format("2006-01-02T15:04:05"))
+			}
+		})
+	}
+}
+
+func TestPointerTimeToInt64(t *testing.T) {
+	tests := []struct {
+		name string
+		args *time.Time
+		want *int64
+	}{
+		{
+			name: "nil time to nil int64",
+			args: nil,
+			want: nil,
+		},
+		{
+			name: "pointer time to pointer int64",
+			args: Time(time.Unix(24580, 0)),
+			want: Int64(24580),
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := PointerTimeToInt64(tt.args); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("PointerTimeToInt64() = %v, want %v", got, tt.want)
 			}
 		})
 	}
