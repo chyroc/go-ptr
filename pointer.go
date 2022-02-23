@@ -10,7 +10,7 @@ func String(s string) *string {
 	return &s
 }
 
-// Bool ean returns the pointer of boolean value
+// Bool returns the pointer of boolean value
 func Bool(s bool) *bool {
 	return &s
 }
