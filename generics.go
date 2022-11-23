@@ -7,24 +7,22 @@ func Ptr[T any](s T) *T {
 	return &s
 }
 
-type Number interface {
-	~int | ~int8 | ~int16 | ~int32 | ~int64 | ~uint | ~uint8 | ~uint16 | ~uint32 | ~uint64 | ~uintptr | ~float32 | ~float64 | ~complex64 | ~complex128
-}
-
-// NumberNoNonePtr returns the pointer of int value, if the value is zero-value, it returns nil.
-func NumberNoNonePtr[T Number](s T) *T {
-	if s == 0 {
+// NoNonePtr returns the pointer of int value, if the value is zero-value, it returns nil.
+func NoNonePtr[T comparable](s T) *T {
+	var empty T
+	if s == empty {
 		return nil
 	}
 	return &s
 }
 
-// ValueNumber returns the value pointed to by the pointer
-func ValueNumber[T Number](s *T) T {
+// Value returns the value pointed to by the pointer
+func Value[T any](s *T) T {
 	if s != nil {
 		return *s
 	}
-	return 0
+	var empty T
+	return empty
 }
 
 func ValueWithDefault[T any](s *T, defaultValue T) T {
